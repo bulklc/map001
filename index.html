@@ -33,7 +33,6 @@
         var highlightLayer;
         function highlightFeature(e) {
             highlightLayer = e.target;
-
             if (e.target.feature.geometry.type === 'LineString') {
               highlightLayer.setStyle({
                 color: '#ffff00',
@@ -77,7 +76,7 @@
                         });
                     }
                 },
-                
+                mouseover: highlightFeature,
             });
             var popupContent = '<table>\
                     <tr>\
@@ -95,7 +94,6 @@
                 </table>';
             layer.bindPopup(popupContent);
         }
-
         function style_Legend0_0(feature) {
             if (feature.properties['Percentage Undrinkable'] >= 16.200000 && feature.properties['Percentage Undrinkable'] <= 40.470000 ) {
                 return {
