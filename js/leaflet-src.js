@@ -11160,36 +11160,6 @@ function gridLayer(options) {
 	return new GridLayer(options);
 }
 
-/*
- * @class TileLayer
- * @inherits GridLayer
- * @aka L.TileLayer
- * Used to load and display tile layers on the map. Extends `GridLayer`.
- *
- * @example
- *
- * ```js
- * L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png?{foo}', {foo: 'bar'}).addTo(map);
- * ```
- *
- * @section URL template
- * @example
- *
- * A string of the following form:
- *
- * ```
- * 'http://{s}.somedomain.com/blabla/{z}/{x}/{y}{r}.png'
- * ```
- *
- * `{s}` means one of the available subdomains (used sequentially to help with browser parallel requests per domain limitation; subdomain values are specified in options; `a`, `b` or `c` by default, can be omitted), `{z}` — zoom level, `{x}` and `{y}` — tile coordinates. `{r}` can be used to add "&commat;2x" to the URL to load retina tiles.
- *
- * You can use custom keys in the template, which will be [evaluated](#util-template) from TileLayer options, like this:
- *
- * ```
- * L.tileLayer('http://{s}.somedomain.com/{foo}/{z}/{x}/{y}.png', {foo: 'bar'});
- * ```
- */
-
 
 var TileLayer = GridLayer.extend({
 
@@ -11217,7 +11187,7 @@ var TileLayer = GridLayer.extend({
 		zoomOffset: 0,
 
 		// @option tms: Boolean = false
-		// If `true`, inverses Y axis numbering for tiles (turn this on for [TMS](https://en.wikipedia.org/wiki/Tile_Map_Service) services).
+		// If `true`, inverses Y axis numbering for tiles (turn this on for [TMS]
 		tms: false,
 
 		// @option zoomReverse: Boolean = false
